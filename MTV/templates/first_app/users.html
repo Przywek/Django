@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Django level two</title>
+    <link  rel="stylesheet" href="{% static 'css/mystyle.css'%}">
+</head>
+<body>
+<h1>Hi welcome to django level two</h1>
+<h2>Here are youre access records:</h2>
+<div class="djangtwo">
+    {% if users_info %}
+            <ol>
+            {% for usr in users_info %}
+             <li> User Info
+             <ul style="list-style-type:disc;">
+                <li>{{ usr.first_name}}</li>
+                 <li>{{ usr.last_name}}</li>
+                 <li>{{ usr.email}}</li>
+             </ul>
+             </li>
+            {% endfor %}
+            </ol>
+    {% else %}
+        <p> No Users record found!</p>
+    {% endif %}
+</div>
+</body>
+</html>
